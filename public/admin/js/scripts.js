@@ -1,4 +1,7 @@
 function loadStyle(e, t) {
+
+
+
     for (var o = 0; o < document.styleSheets.length; o++)
         if (document.styleSheets[o].href == e) return;
     var a = document.getElementsByTagName("head")[0],
@@ -22,10 +25,20 @@ function loadStyle(e, t) {
         o = "ltr",
         a = "rounded";
     function r() {
+     
         e("body").addClass(o),
             e("html").attr("dir", o),
             e("body").addClass(a),
             e("body").dore();
+    }
+    var url =   window.location.href;
+    var arr =   url.split('/');
+    if(arr.length == 6){
+        var href_s = "../admin/css/";
+    }else if(arr.length == 7){
+        var href_s = "../../admin/css/";
+    }else{
+        var href_s = "../../../admin/css/";
     }
     "undefined" != typeof Storage &&
         (localStorage.getItem("dore-theme")
@@ -41,7 +54,8 @@ function loadStyle(e, t) {
         e(".direction-radio[data-direction='" + o + "']").attr("checked", !0),
         e(".radius-radio[data-radius='" + a + "']").attr("checked", !0),
         e("#switchDark").attr("checked", t.indexOf("dark") > 0),
-        loadStyle("/admin/css/" + t, function () {
+    
+        loadStyle(""+href_s+"" + t, function () {
             setTimeout(r, 300);
         }),
         e("body").on("click", ".theme-color", function (t) {
