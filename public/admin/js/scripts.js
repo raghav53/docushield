@@ -34,11 +34,11 @@ function loadStyle(e, t) {
     var url =   window.location.href;
     var arr =   url.split('/');
     if(arr.length == 6){
-        var href_s = "../admin/css/";
+        var href_s = "../public/admin/css/";
     }else if(arr.length == 7){
-        var href_s = "../../admin/css/";
+        var href_s = "../../public/admin/css/";
     }else{
-        var href_s = "../../../admin/css/";
+        var href_s = "../../../public/admin/css/";
     }
     "undefined" != typeof Storage &&
         (localStorage.getItem("dore-theme")
