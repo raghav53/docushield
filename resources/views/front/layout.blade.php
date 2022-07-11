@@ -20,7 +20,7 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html"><img src="{{asset('front/images/logo.png')}}" /></a>
+                <a class="navbar-brand" href="{{url('/')}}"><img src="{{asset('front/images/logo.png')}}" /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -35,7 +35,7 @@
                             <a class="nav-link" href="#"><i class="bi bi-people-fill me-2"></i>Company</a>
                         </li>
                         <li class="nav-item rounded">
-                            <a class="nav-link" href="blog.html"><i class="bi bi-telephone-fill me-2"></i>Blog</a>
+                            <a class="nav-link" href="javascript:void(0)"><i class="bi bi-telephone-fill me-2"></i>Blog</a>
                         </li>
                         <li class="nav-item dropdown rounded">
                             <a class="Get-app" href="">Get the App</a>

@@ -156,11 +156,11 @@
                     <li class=" {{ request()->is('mainBanner') ? 'active' : ''}}  {{ request()->is('everythingYouNeed') ? 'active' : ''}} {{ request()->is('whatTheySay') ? 'active' : ''}} {{ request()->is('blog') ? 'active' : ''}} {{ request()->is('recentMedia') ? 'active' : ''}}"><a href="#layouts"><i class="iconsminds-folder-edit"></i> Home Page</a></li>
                     <!-- <li class=" {{ request()->is('sessionFeedback') ? 'active' : ''}}"><a href="{{url('sessionFeedback')}}"><i class="iconsminds-mail-favorite"></i> Feedback</a></li>
 
-                    <li class=" {{ request()->is('sessionHistory') ? 'active' : ''}}"><a href="{{url('sessionHistory')}}"><i class="iconsminds-stopwatch"></i> Session History</a></li>
+                    <li class=" {{ request()->is('sessionHistory') ? 'active' : ''}}"><a href="{{url('sessionHistory')}}"><i class="iconsminds-stopwatch"></i> Session History</a></li>-->
 
                     <li class=" {{ request()->is('adminAccount') ? 'active' : ''}}"><a href="{{url('adminAccount')}}"><i class="iconsminds-bucket"></i> Account</a></li>
 
-                    <li class=" {{ request()->is('coinsMaster') ? 'active' : ''}}  {{ request()->is('showUserCoins') ? 'active' : ''}}"><a href="#coins"><i class="iconsminds-bucket"></i> Coins Master</a></li>
+                    <!--<li class=" {{ request()->is('coinsMaster') ? 'active' : ''}}  {{ request()->is('showUserCoins') ? 'active' : ''}}"><a href="#coins"><i class="iconsminds-bucket"></i> Coins Master</a></li>
                     <li><a href="https://dore-jquery-docs.coloredstrategies.com/" target="_blank"><i class="iconsminds-library"></i> Docs</a></li> -->
                 </ul>
             </div>

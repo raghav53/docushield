@@ -36,13 +36,18 @@ Route::get('/', [HomeController::class, 'home']);
 |--------------------------------------------------------------------------
 |
 */
-
+Route::get('/adminlogout', function () {
+    Auth::logout();
+    return redirect('/admin_login');
+});
 Route::get('/make_admin', [AdminDashboard::class, 'make_admin']);
 Route::get('/admin_login', [AdminDashboard::class, 'admin_login']);
 Route::post('/post_admin', [AdminDashboard::class, 'post_admin']);
 Route::post('/sendResetPasswordLinkAdmin', [AdminDashboard::class, 'sendResetPasswordLinkAdmin']);
 
 Route::middleware([AdminAuth::class])->group(function () {
+     Route::get('/adminAccount', [AdminMain::class, 'adminAccount'])->name('adminAccount');
+    Route::post('/saveAdminAccountDetails', [AdminMain::class, 'saveAdminAccountDetails'])->name('saveAdminAccountDetails');
     Route::get('/adminDashboard', [AdminDashboard::class, 'dashboard'])->name('AdminDashboard');
     Route::get('/mainBanner', [AdminMain::class, 'mainBanner'])->name('mainBanner');
     Route::get('/everythingYouNeed', [AdminMain::class, 'everythingYouNeed'])->name('everythingYouNeed');

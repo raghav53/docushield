@@ -16,6 +16,62 @@ use Validator;
 class AdminMain extends Controller
 {
 
+    public function adminAccount()
+    {
+        return view('admin/account');
+    }
+
+
+   public function saveAdminAccountDetails(Request $request)
+   {
+        if($request->hasFile('image')){
+            $rules = array(
+                'image'        => 'mimes:jpeg,jpg,png,PNG,JPG,gif|required|max:10000'
+     
+             );
+             $validator = Validator::make($request->all(), $rules);
+             if ($validator->fails()) {
+                 $success['message']    =  "field is required";
+           
+                 return Redirect::back()->withErrors($validator);
+                
+             } else{
+                 $imageName = time() . '.' . $request->image->extension();
+                    $request->image->move(public_path('images'), $imageName);
+        
+                    $user              =  User::find(Auth::User()->id);
+                    $user->image       =  $imageName;
+                    $user->save();
+        
+         
+             } 
+        }
+
+        if($request->password!=''){
+            $user                 =  User::find(Auth::User()->id);
+            $user->password       =  Hash::make($request->password);
+            $user->save();
+        }
+        if($request->name!=''){
+            $user                 =  User::find(Auth::User()->id);
+            $user->name           = $request->name;
+            $user->save();
+        }
+        if($request->email!=''){
+            $user                 =  User::find(Auth::User()->id);
+            $user->email       =  $request->email;
+            $user->save();
+        }
+        return Redirect::back();
+   }
+
+
+
+
+
+
+
+
     public function mainBanner()
     {
         $count      =   0;

@@ -20,7 +20,7 @@
         <div class="row">
             <div class="col-12">
                 <h5 class="mb-4">Content</h5>
-                <div class="row icon-cards-row mb-4">
+                <!-- <div class="row icon-cards-row mb-4">
                     <div class="col-md-4 col-lg-4 col-sm-4 col-6 mb-4"><a href="{{url('showUsersList/creator')}}" class="card">
                             <div class="card-body text-center"><i class="simple-icon-people"></i>
                                 <p class="card-text font-weight-semibold mb-0">Creators</p>
@@ -51,7 +51,7 @@
                                 <p class="lead text-center">40</p>
                             </div>
                         </a></div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
