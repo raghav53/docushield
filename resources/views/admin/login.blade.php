@@ -56,8 +56,8 @@
                                  
                              
                                 <div class="d-flex justify-content-between align-items-center">
-                                <a href="javascript:void(0)"  id="forgot_pwd" onclick="forgot_password()">Forget
-                                        password?</a>  
+                                <!-- <a href="javascript:void(0)"  id="forgot_pwd" onclick="forgot_password()">Forget
+                                        password?</a>   -->
                                         <div id="forgot_btn">
                                         <button class="btn btn-primary btn-lg btn-shadow" type="submit">LOGIN</button></div>
                                         </div>  
