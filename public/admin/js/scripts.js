@@ -41,7 +41,7 @@ function loadStyle(e, t) {
         e(".direction-radio[data-direction='" + o + "']").attr("checked", !0),
         e(".radius-radio[data-radius='" + a + "']").attr("checked", !0),
         e("#switchDark").attr("checked", t.indexOf("dark") > 0),
-        loadStyle("public/admin/css//" + t, function () {
+        loadStyle("/admin/css/" + t, function () {
             setTimeout(r, 300);
         }),
         e("body").on("click", ".theme-color", function (t) {
