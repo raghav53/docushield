@@ -28,7 +28,15 @@ use App\Http\Middleware\AdminAuth;
 //     return view('welcome');
 // });
 
+/*
+|--------------------------------------------------------------------------
+| Home Page Routes
+|--------------------------------------------------------------------------
+|
+*/
 Route::get('/', [HomeController::class, 'home']);
+Route::get('/viewAllPost', [HomeController::class, 'viewAllPost']);
+Route::get('/showPost/{id}/{header?}', [HomeController::class, 'showPost']);
 
 /*
 |--------------------------------------------------------------------------

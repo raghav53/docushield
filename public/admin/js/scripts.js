@@ -55,7 +55,7 @@ function loadStyle(e, t) {
         e(".radius-radio[data-radius='" + a + "']").attr("checked", !0),
         e("#switchDark").attr("checked", t.indexOf("dark") > 0),
     
-        loadStyle(""+href_s+"" + t, function () {
+        loadStyle("../admin/css//" + t, function () {
             setTimeout(r, 300);
         }),
         e("body").on("click", ".theme-color", function (t) {

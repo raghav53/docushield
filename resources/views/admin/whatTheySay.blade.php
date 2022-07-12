@@ -66,7 +66,7 @@
                                         <div class="simple-line-icons">
                                             <a href="javascript:void(0)">
                                                 <div class="glyph">
-                                                    <div class="glyph-icon simple-icon-note" data-toggle="modal" data-backdrop="static" data-target="#exampleModalRight" onclick="addNew('{{$list->id}}','{{$list->header}}','{{$list->text}}','{{$list->image}}',1,'{{$list->name}}','{{$list->position}}')"></div>
+                                                    <div class="glyph-icon simple-icon-note" data-toggle="modal" data-backdrop="static" data-target="#exampleModalRight" onclick="addNew('{{$list->id}}','{{$list->header}}','{{$list->text}}','{{$list->image}}','{{$list->link}}',1,'{{$list->name}}','{{$list->position}}')"></div>
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)">

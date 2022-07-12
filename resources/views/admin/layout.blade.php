@@ -30,6 +30,9 @@
     <link rel="stylesheet" href="{{asset('admin/css/vendor/bootstrap-tagsinput.css')}}">
     <link href="{{asset('plugins/snackbar/js-snackbar.css')}}" rel="stylesheet" />
     <link href="{{asset('plugins/parsley/parsley.css')}}" rel="stylesheet" />
+    <!-- {{-- CKEditor CDN --}} -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>
+
     <style>
         .card.auth-card {
             padding: 52px 32px;
@@ -324,7 +327,39 @@
     };
 </script>
 <script>
-    function addNew(id = '', header = '', text = '', image = '', link = '', isImage = '',$name='',$position='',$data_type='') {
+    function addNew(id = '', header = '', text = '', image = '', link = '', isImage = '', name = '', position = '', data_type = '', keywords = '', description = '',short_desc='') {
+        
+
+        if ($('#descriptionData_' + id).length) {
+            var desc = jQuery('#descriptionData_' + id).val();
+            var short_descdata = jQuery('#short_descriptionData_' + id).val();
+            var fb_link = jQuery('#facebookData_' + id).val();
+            var twitter_link = jQuery('#twitterData_' + id).val();
+            var youtube_link = jQuery('#youtubeData_' + id).val();
+            jQuery('#fb_link').val(fb_link);
+            jQuery('#twitter_link').val(twitter_link);
+            jQuery('#youtube_link').val(youtube_link);
+        $('.ck-reset').text('');
+        if (desc != '') {
+            ClassicEditor
+                .create(document.querySelector('#description'))
+                .catch(error => {
+                    console.error(error);
+                });
+            jQuery('#description').val(desc);
+            // $("textarea#description").val(desc)
+        } else {
+            ClassicEditor
+                .create(document.querySelector('#description'))
+                .catch(error => {
+                    console.error(error);
+                });
+            jQuery('#description').val('');
+        }
+        } else {
+            /* it doesn't exist */
+        }
+        
         var html = '';
 
         if (id > 0) {
@@ -336,8 +371,10 @@
             // jQuery('#data_type').val(data_type);
             // jQuery('#image').val(image);
             jQuery('#link').val(link);
+            jQuery('#keywords').val(keywords);
+            jQuery('#short_desc').val(short_descdata);
             var dataType = '  <div><label>Video Platform</label> <select class="form-control" name="data_type"><option value="youtube">Youtube</option>  <option value="vimeo">vimeo</option> </select> </div>';
-           jQuery('#platform_type').html(dataType);
+            jQuery('#platform_type').html(dataType);
             if (isImage == 1) {
                 jQuery('#name').val(name);
                 jQuery('#position').val(position);
@@ -352,10 +389,12 @@
             jQuery('#header').val(header);
             jQuery('#home_page').val(id);
             jQuery('#text').val(text);
+            jQuery('#keywords').val(keywords);
+            jQuery('#short_desc').val(short_descdata);
             // jQuery('#image').val(image);
             jQuery('#link').val(link);
             var dataType = '  <div class="form-control"><label>Video Platform</label> <select class="form-control" name="data_type"required><option value="youtube">Youtube</option>  <option value="vimeo">vimeo</option> </select> </div>';
-           jQuery('#platform_type').html(dataType);
+            jQuery('#platform_type').html(dataType);
             if (isImage == 1) {
                 jQuery('#name').val(name);
                 jQuery('#position').val(position);

@@ -141,6 +141,12 @@ class AdminMain extends Controller
             $HomePage->name           = $request->name;
             $HomePage->position       = $request->position;
             $HomePage->data_type      = $request->data_type;
+            $HomePage->keywords       = str_replace(' ',',',$request->keywords);
+            $HomePage->description    = $request->description;
+            $HomePage->short_desc     = $request->short_desc;
+            $HomePage->fb_link         = $request->fb_link;
+            $HomePage->twitter_link     = $request->twitter_link;
+            $HomePage->youtube_link     = $request->youtube_link;
             if ($request->hasFile('image')) {
                 $rules = array(
                     'image'        => 'mimes:jpeg,jpg,png,PNG,JPG,gif|required|max:10000'

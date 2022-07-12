@@ -34,6 +34,7 @@
                                     <!-- <th>S.No</th> -->
                                     <th>Title</th>
                                     <th>Image</th>
+                                    <th>Keywords</th>
                                   
                                     <th>Action</th>
 
@@ -53,12 +54,14 @@
                                     <td>
                                         <p class="list-item-heading"><img style="width: 70px; height:70px;" src="{{asset('images')}}/{{$list->image}}"></p>
                                     </td>
-                                
+                                    <td>
+                                        <p class="list-item-heading">{{$list->keywords}}</p>
+                                    </td>
                                     <td>
                                         <div class="simple-line-icons">
                                             <a href="javascript:void(0)">
                                                 <div class="glyph">
-                                                    <div class="glyph-icon simple-icon-note" data-toggle="modal" data-backdrop="static" data-target="#exampleModalRight" onclick="addNew('{{$list->id}}','{{$list->header}}','{{$list->text}}','{{$list->image}}')"></div>
+                                                    <div class="glyph-icon simple-icon-note" data-toggle="modal" data-backdrop="static" data-target="#exampleModalRight" onclick="addNew('{{$list->id}}','{{$list->header}}','{{$list->text}}','{{$list->image}}','{{$list->link}}',0,'','','','{{$list->keywords}}')"></div>
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)">
@@ -69,7 +72,12 @@
                                         </div>
 
                                     </td>
-
+                                    <!-- <input type="hidden" id="descriptionData" value="{{$list->description}}"> -->
+                                    <textarea style="display: none;" class="form-control" id="descriptionData_{{$list->id}}" name="description" >{{$list->description}}</textarea>
+                                    <textarea style="display: none;" class="form-control" id="short_descriptionData_{{$list->id}}"  name="description" >{{$list->short_desc}}</textarea>
+                                    <input type="hidden" id="facebookData_{{$list->id}}" class="form-control" value="{{$list->fb_link}}"  >
+                                    <input type="hidden" id="twitterData_{{$list->id}}" class="form-control" value="{{$list->twitter_link}}"  >
+                                    <input type="hidden" id="youtubeData_{{$list->id}}" class="form-control"value="{{$list->youtube_link}}"  >
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -94,9 +102,14 @@
                         <div class="modal-body">
                             <form action="{{url('saveMainPageData')}}" method="POST" enctype="multipart/form-data" data-parsley-validate>
                                 @csrf
-                                <div class="form-group"><label>Title</label> <input type="text" name="header" id="header" class="form-control" placeholder="" required></div>
+                                <div class="form-group"><label>Title*</label> <input type="text" name="header" id="header" class="form-control" placeholder="" required></div>
                                 <span id="upload_images"> </span>
-
+                                <div class="form-group"><label>Keywords*</label> <input type="text" name="keywords" id="keywords" class="form-control" placeholder="" required></div>
+                                <div class="form-group"><label>Short Desc*</label> <textarea  name="short_desc" id="short_desc" class="form-control" placeholder="" rows="8" cols="200" required></textarea></div>
+                                <div class="form-group"><label>Description*</label>   <textarea class="form-control"  id="description" placeholder="Enter the Description" name="description" required></textarea></div>
+                                <div class="form-group"><label>Facebook Link</label> <input type="text" name="fb_link" id="fb_link" class="form-control" placeholder="" ></div>
+                                <div class="form-group"><label>Twitter Link</label> <input type="text" name="twitter_link" id="twitter_link" class="form-control" placeholder="" ></div>
+                                <div class="form-group"><label>Youtube Link</label> <input type="text" name="youtube_link" id="youtube_link" class="form-control" placeholder="" ></div>
                                 <input type="hidden" name="home_page" id="home_page">
                                 <input type="hidden" name="type" id="type" value="4">
                                 <div class="modal-footer"> <button type="submit" class="btn btn-primary">Submit</button><button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button></div>

@@ -1,3 +1,6 @@
+@section('description','Docushiled')
+@section('keywords','Docushiled')
+@section('title','Docushiled')
 @extends('front/layout')
 @section('content')
   <!--Slider Section -->
@@ -120,6 +123,7 @@
             <h2 class="text-center pb-70">Blog</h2>
             <div class="row autoplay">
                 @foreach($blog as $list)
+                <a class="white_color" href="{{url('showPost')}}/{{$list->id}}/{{urlencode($list->header)}}">
                 <div>
                     <div class="blog">
                         <img src="{{asset('images')}}/{{$list->image}}" />
@@ -127,9 +131,10 @@
                         <p>{{$list->header}}</p>
                     </div>
                 </div>
+                </a>
                 @endforeach
             </div>
-
+           <a href="{{url('viewAllPost')}}"> <button class="btn-btn-default viewmore">View All</button></a>
         </div>
     </section>
     <section class="everthing-you pb-70 pt78">

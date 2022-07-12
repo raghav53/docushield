@@ -5,13 +5,33 @@
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+    <meta name="description" content="@yield('description')">
+    <meta name="keywords" content="@yield('keywords')">
+    <meta name="author" content="Docushiled">
     <!-- Bootstrap CSS -->
     <link href="{{asset('front/css/bootstrap.min.css')}}" rel="stylesheet" />
     <link href="{{asset('front/css/main.css')}}" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="{{asset('front/slick/slick.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('front/slick/slick-theme.css')}}" />
-    <title>Docushiled </title>
+
+    <!-- facebook -->
+    <meta property="og:url"           content="@yield('fb_url')" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Docushield" />
+    <meta property="og:description"   content="@yield('description')" />
+    <meta property="og:image"         content="@yield('fb_image')" />
+    <title>@yield('title')</title>
+    <style>
+        .white_color{
+            color: white;
+        }
+        .viewmore{
+            float: right;
+    margin-top: 20px;
+    width: 131px;
+    height: 50px;
+        }
+    </style>
 </head>
 <!-- Button trigger modal -->
 
@@ -35,7 +55,7 @@
                             <a class="nav-link" href="#"><i class="bi bi-people-fill me-2"></i>Company</a>
                         </li>
                         <li class="nav-item rounded">
-                            <a class="nav-link" href="javascript:void(0)"><i class="bi bi-telephone-fill me-2"></i>Blog</a>
+                            <a class="nav-link" href="{{url('viewAllPost')}}"><i class="bi bi-telephone-fill me-2"></i>Blog</a>
                         </li>
                         <li class="nav-item dropdown rounded">
                             <a class="Get-app" href="">Get the App</a>
@@ -71,7 +91,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-md-6 text-right link">
+                        <!-- <div class="col-md-6 text-right link">
                             <div class="socail-ul">
                                 <ul>
                                     <li>
@@ -85,7 +105,7 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
