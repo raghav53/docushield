@@ -48,14 +48,14 @@
                                         <p class="text-muted">{{$i++}}</p>
                                     </td> -->
                                     <td>
-                                        <p class="list-item-heading">{{$list->header}}</p>
+                                        <p class="list-item-heading">{{substr($list->header,0,10)}}..</p>
                                     </td>
                                     
                                     <td>
                                         <p class="list-item-heading"><img style="width: 70px; height:70px;" src="{{asset('images')}}/{{$list->image}}"></p>
                                     </td>
                                     <td>
-                                        <p class="list-item-heading">{{$list->keywords}}</p>
+                                        <p class="list-item-heading">{{substr($list->keywords,0,10)}}..</p>
                                     </td>
                                     <td>
                                         <div class="simple-line-icons">
@@ -111,7 +111,7 @@
 
                                 <div class="form-group"><label>Keywords*</label> <input type="text" name="keywords" id="keywords" class="form-control" placeholder="" required></div>
                                 <div class="form-group"><label>Short Desc*</label> <textarea  name="short_desc" id="short_desc" class="form-control" placeholder="" rows="8" cols="200" required></textarea></div>
-                                <div class="form-group"><label>Description*</label>   <textarea class="form-control"  id="description" placeholder="Enter the Description" name="description" required></textarea></div>
+                                <div class="form-group"><label>Description*</label>   <textarea class="form-control"  id="description" placeholder="Enter the Description" name="description"></textarea></div>
                                 <div class="form-group"><label>Facebook Link</label> <input type="text" name="fb_link" id="fb_link" class="form-control" placeholder="" ></div>
                                 <div class="form-group"><label>Twitter Link</label> <input type="text" name="twitter_link" id="twitter_link" class="form-control" placeholder="" ></div>
                                 <div class="form-group"><label>Youtube Link</label> <input type="text" name="youtube_link" id="youtube_link" class="form-control" placeholder="" ></div>

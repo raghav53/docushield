@@ -114,6 +114,18 @@ class AdminMain extends Controller
     {
         $imageName = NULL;
         //    echo"<pre>";print_r($_POST);die();
+        if($request->type == 4){
+            $rules = array(
+                'description'         => 'required',
+            );
+            $validator = Validator::make($request->all(), $rules);
+            if ($validator->fails()) {
+                $success['message']    =  "field is required";
+                // prx($validator->errors());
+                return Redirect::back()->withErrors($validator);
+                // return Redirect::back()->withErrors(['msg' => $validator->errors()]);
+            }    
+        }
         $rules = array(
             'header'         => 'required',
         );

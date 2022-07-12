@@ -35,7 +35,6 @@
                                     <th>Title</th>
                                     <th>Text</th>
                                     <th>Name</th>
-                                    <th>Postion</th>
                                   
                                     <th>Action</th>
 
@@ -49,17 +48,15 @@
                                         <p class="text-muted">{{$i++}}</p>
                                     </td> -->
                                     <td>
-                                        <p class="list-item-heading">{{$list->header}}</p>
+                                        <p class="list-item-heading">{{subtr($list->header,0,10)}}..</p>
                                     </td>
                                     <td>
-                                        <p class="list-item-heading">{{$list->text}}</p>
+                                        <p class="list-item-heading">{{subtr($list->text,0,10)}}..</p>
                                     </td>
                                     <td>
-                                        <p class="list-item-heading">{{$list->name}}</p>
+                                        <p class="list-item-heading">{{subtr($list->name,0,10)}}..</p>
                                     </td>
-                                    <td>
-                                        <p class="list-item-heading">{{$list->position}}</p>
-                                    </td>
+                                
                               
                                 
                                     <td>

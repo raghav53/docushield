@@ -47,10 +47,10 @@
                                         <p class="text-muted">{{$i++}}</p>
                                     </td> -->
                                     <td>
-                                        <p class="list-item-heading">{{$list->header}}</p>
+                                        <p class="list-item-heading">{{substr($list->header,0,10)}}..</p>
                                     </td>
                                     <td>
-                                        <p class="list-item-heading">{{$list->text}}</p>
+                                        <p class="list-item-heading">{{substr($list->text,0,10)}}..</p>
                                     </td>
                                     <td>
                                         <p class="list-item-heading"><img style="width: 70px; height:70px;" src="{{asset('images')}}/{{$list->image}}"></p>

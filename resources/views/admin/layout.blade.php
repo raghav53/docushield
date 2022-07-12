@@ -308,7 +308,7 @@
     new SnackBar({
         message: "<?= implode('', $errors->all(':message'))  ?>",
         status: "error",
-        position: "bc",
+        position: "br",
         timeout: 10000,
         dismissible: true
     });
