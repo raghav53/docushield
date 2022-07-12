@@ -34,8 +34,8 @@
                             <img src="{{asset('front/images/blog/profile.png')}}" class="img-fluid">
                         </div>
                         <div class="name-img">
-                            <h3>Adrian</h3>
-                            <p>Co-Founder and ceo</p>
+                            <h3>{{$blog->name}}</h3>
+                            <p>{{$blog->position}}</p>
                         </div>
                     </div>
                     <div class="cotnet-main">

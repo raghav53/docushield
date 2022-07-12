@@ -61,7 +61,7 @@
                                         <div class="simple-line-icons">
                                             <a href="javascript:void(0)">
                                                 <div class="glyph">
-                                                    <div class="glyph-icon simple-icon-note" data-toggle="modal" data-backdrop="static" data-target="#exampleModalRight" onclick="addNew('{{$list->id}}','{{$list->header}}','{{$list->text}}','{{$list->image}}','{{$list->link}}',0,'','','','{{$list->keywords}}')"></div>
+                                                    <div class="glyph-icon simple-icon-note" data-toggle="modal" data-backdrop="static" data-target="#exampleModalRight" onclick="addNew('{{$list->id}}','{{$list->header}}','{{$list->text}}','{{$list->image}}','{{$list->link}}',0,'{{$list->name}}','{{$list->position}}','','{{$list->keywords}}')"></div>
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0)">
@@ -90,11 +90,13 @@
 
 
     </div>
-    <div class="card mb-4">
+    <div class="card mb-4   ">
         <div class="card-body">
 
-            <div class="modal fade modal-right" id="exampleModalRight" tabindex="-1" role="dialog" aria-labelledby="exampleModalRight" aria-hidden="true">
-                <div class="modal-dialog" role="document">
+            <!-- <div class="modal fade modal-right" id="exampleModalRight" tabindex="-1" role="dialog" aria-labelledby="exampleModalRight" aria-hidden="true">
+                <div class="modal-dialog" role="document"> -->
+                            <div class="modal fade bd-example-modal-lg" id="exampleModalRight" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="addTitle"></h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -104,6 +106,9 @@
                                 @csrf
                                 <div class="form-group"><label>Title*</label> <input type="text" name="header" id="header" class="form-control" placeholder="" required></div>
                                 <span id="upload_images"> </span>
+                                <div class="form-group"><label>Name</label> <input type="text" name="name" id="name" class="form-control" placeholder="" ></div>
+                                <div class="form-group"><label> Position</label> <input type="text" name="position" id="position" class="form-control" placeholder="" ></div>
+
                                 <div class="form-group"><label>Keywords*</label> <input type="text" name="keywords" id="keywords" class="form-control" placeholder="" required></div>
                                 <div class="form-group"><label>Short Desc*</label> <textarea  name="short_desc" id="short_desc" class="form-control" placeholder="" rows="8" cols="200" required></textarea></div>
                                 <div class="form-group"><label>Description*</label>   <textarea class="form-control"  id="description" placeholder="Enter the Description" name="description" required></textarea></div>

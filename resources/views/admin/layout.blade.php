@@ -329,7 +329,7 @@
 <script>
     function addNew(id = '', header = '', text = '', image = '', link = '', isImage = '', name = '', position = '', data_type = '', keywords = '', description = '',short_desc='') {
         
-
+        // alert(name);
         if ($('#descriptionData_' + id).length) {
             var desc = jQuery('#descriptionData_' + id).val();
             var short_descdata = jQuery('#short_descriptionData_' + id).val();
@@ -339,6 +339,8 @@
             jQuery('#fb_link').val(fb_link);
             jQuery('#twitter_link').val(twitter_link);
             jQuery('#youtube_link').val(youtube_link);
+            jQuery('#name').val(name);
+                jQuery('#position').val(position);
         $('.ck-reset').text('');
         if (desc != '') {
             ClassicEditor

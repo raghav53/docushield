@@ -93,9 +93,10 @@
     </div>
     <div class="card mb-4">
         <div class="card-body">
-
-            <div class="modal fade modal-right" id="exampleModalRight" tabindex="-1" role="dialog" aria-labelledby="exampleModalRight" aria-hidden="true">
-                <div class="modal-dialog" role="document">
+        <div class="modal fade bd-example-modal-lg" id="exampleModalRight" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+            <!-- <div class="modal fade modal-right" id="exampleModalRight" tabindex="-1" role="dialog" aria-labelledby="exampleModalRight" aria-hidden="true">
+                <div class="modal-dialog" role="document"> -->
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="addTitle"></h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
