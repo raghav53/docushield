@@ -359,7 +359,13 @@
             jQuery('#description').val('');
         }
         } else {
-            /* it doesn't exist */
+              $('.ck-reset').text('');
+              ClassicEditor
+                .create(document.querySelector('#description'))
+                .catch(error => {
+                    console.error(error);
+                });
+               jQuery('#description').val('');
         }
         
         var html = '';
