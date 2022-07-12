@@ -48,14 +48,14 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-md-auto gap-2">
                         <li class="nav-item rounded">
-                            <a class="nav-link active" aria-current="page" href="#"><i
+                            <a class="nav-link {{ request()->is('/') ? 'active' : ''}}" aria-current="page" href="#"><i
                                     class="bi bi-house-fill me-2"></i>Product</a>
                         </li>
                         <li class="nav-item rounded">
                             <a class="nav-link" href="#"><i class="bi bi-people-fill me-2"></i>Company</a>
                         </li>
                         <li class="nav-item rounded">
-                            <a class="nav-link" href="{{url('viewAllPost')}}"><i class="bi bi-telephone-fill me-2"></i>Blog</a>
+                            <a class="nav-link {{ request()->is('viewAllPost') ? 'active' : ''}}" href="{{url('viewAllPost')}}"><i class="bi bi-telephone-fill me-2"></i>Blog</a>
                         </li>
                         <li class="nav-item dropdown rounded">
                             <a class="Get-app" href="">Get the App</a>
