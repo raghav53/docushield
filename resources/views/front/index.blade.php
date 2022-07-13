@@ -34,7 +34,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="mobile">
-                        <img src="{{asset('images')}}/{{$mainBanner[0]->image}}" />
+                        <img style="width: 100%; height:757px" src="{{asset('images')}}/{{$mainBanner[0]->image}}" />
                     </div>
                 </div>
             </div>
@@ -73,7 +73,7 @@
                     @foreach($everythingYouNeed as $list)
                     <div class="col-lg-4">
                         <div class="sercure">
-                            <img src="{{asset('images')}}/{{$list->image}}" />
+                            <img style="width: 70px; height:70px;" src="{{asset('images')}}/{{$list->image}}" />
                             <h3>{{$list->header}}</h3>
                             <p>{{$list->text}}</p>
                         </div>
@@ -118,7 +118,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="dummy">
-                    <img src="{{asset('images')}}/{{$secMainBanner[0]->image}}" />
+                    <img style="width: 464px; height:655px;" src="{{asset('images')}}/{{$secMainBanner[0]->image}}" />
                     </div>
                 </div>
             </div>
@@ -153,7 +153,7 @@
                     <div>
                         <div class="recent">
                             <a href="" class="vpop" data-type="{{$list->data_type}}" data-id="{{$list->link}}" data-autoplay='true'>
-                                <img src="{{asset('images')}}/{{$list->image}}" /></a>
+                                <img style="width: 384px; height:248px;" src="{{asset('images')}}/{{$list->image}}" /></a>
 
                             <p>{{$list->header}}</p>
                         </div>
