@@ -408,8 +408,8 @@
             jQuery('#short_desc').val(short_descdata);
             // jQuery('#image').val(image);
             jQuery('#link').val(link);
-            var dataType = '  <div class="form-control"><label>Video Platform</label> <select class="form-control" name="data_type"required><option value="youtube">Youtube</option>  <option value="vimeo">vimeo</option> </select> </div>';
-            jQuery('#platform_type').html(dataType);
+            // var dataType = '  <div class="form-control"><label>Video Platform</label> <select class="form-control" name="data_type"required><option value="youtube">Youtube</option>  <option value="vimeo">vimeo</option> </select> </div>';
+            // jQuery('#platform_type').html(dataType);
             if (isImage == 1) {
                 jQuery('#name').val(name);
                 jQuery('#position').val(position);

@@ -106,9 +106,15 @@
                                 <span id="upload_images"> </span>
                                 <div class="form-group"><label>Video ID</label> <input type="text" name="link" id="link" class="form-control" placeholder="" required></div>
 
-                                <spna id="platform_type">
-                              
-                                </spna>
+                                <spnan id="platform_type">
+                                <div>
+                                    <label>Video Platform</label>
+                                 <select class="form-control" name="data_type">
+                                    <option value="youtube">Youtube</option> 
+                                     <option value="vimeo">vimeo</option>
+                                     </select> 
+                                    </div>
+                                </spnan>
                               
                                 <input type="hidden" name="home_page" id="home_page">
                                 <input type="hidden" name="type" id="type" value="1">
