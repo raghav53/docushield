@@ -24,7 +24,7 @@
             <div class="col-12 data-tables-hide-filter">
                 <div class="card">
                     <div class="card-body">
-                        @if($count>1)
+                        @if($count>0)
                         @else
                         <button class="btn btn-outline-secondary btn-lg mb-1 " data-toggle="modal" data-backdrop="static" data-target="#exampleModalRight" style="float: right;" onclick="addNew(0,' ','','')" type="button"> Add New</button>
                         @endif
@@ -71,7 +71,8 @@
                                         </div>
 
                                     </td>
-
+                                    <input type="hidden" id="headerData_{{$list->id}}" class="form-control" value="{{$list->header}}"  >
+                                    <input type="hidden" id="textData_{{$list->id}}" class="form-control" value="{{$list->text}}"  >
                                 </tr>
                                 @endforeach
                             </tbody>

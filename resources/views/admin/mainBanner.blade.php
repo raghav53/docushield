@@ -24,7 +24,7 @@
             <div class="col-12 data-tables-hide-filter">
                 <div class="card">
                     <div class="card-body">
-                        @if($count>1)
+                        @if($count>0)
                         @else
                         <button class="btn btn-outline-secondary btn-lg mb-1 " data-toggle="modal" data-backdrop="static" data-target="#exampleModalRight" style="float: right;" onclick="addNew(0,' ','','')" type="button"> Add New</button>
                         @endif
@@ -75,7 +75,8 @@
                                         </div>
 
                                     </td>
-
+                                    <input type="hidden" id="headerData_{{$list->id}}" class="form-control" value="{{$list->header}}"  >
+                                    <input type="hidden" id="textData_{{$list->id}}" class="form-control" value="{{$list->text}}"  >
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -102,9 +103,9 @@
                             <form action="{{url('saveMainPageData')}}" method="POST" enctype="multipart/form-data" data-parsley-validate>
                                 @csrf
                                 <div class="form-group"><label>Title</label> <input type="text" name="header" id="header" class="form-control" placeholder="" required></div>
-                                <div class="form-group"><label>Text</label> <input type="text" name="text" id="text" class="form-control" placeholder="" required></div>
+                                <div class="form-group"><label>Text</label> <input type="text" name="text"  id="text" class="form-control" placeholder="" required></div>
                                 <span id="upload_images"> </span>
-                                <div class="form-group"><label>Video ID</label> <input type="text" name="link" id="link" class="form-control" placeholder="" required></div>
+                                <div class="form-group"><label>Video ID</label> <input type="text" name="link" maxlength="200" id="link" class="form-control" placeholder="" required></div>
 
                                 <spnan id="platform_type">
                                 <div>

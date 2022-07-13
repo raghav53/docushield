@@ -74,39 +74,39 @@ class AdminMain extends Controller
 
     public function mainBanner()
     {
-        $count      =   0;
-        $data       =   HomePage::where('type', 1)->get();
+        $count      =   HomePage::where('type', 1)->count();
+        $data       =   HomePage::where('type', 1)->orderBy('id','desc')->get();
         return view('admin/mainBanner', get_defined_vars());
     }
 
     public function everythingYouNeed()
     {
-        $count      =   0;
-        $data       =   HomePage::where('type', 2)->get();
+        $count      =  HomePage::where('type', 2)->count();
+        $data       =   HomePage::where('type', 2)->orderBy('id','desc')->get();
         return view('admin/everythingYouNeed', get_defined_vars());
     }
     public function whatTheySay()
     {
-        $count      =   0;
-        $data       =   HomePage::where('type', 3)->get();
+        $count      =   HomePage::where('type', 3)->count();
+        $data       =   HomePage::where('type', 3)->orderBy('id','desc')->get();
         return view('admin/whatTheySay', get_defined_vars());
     }
     public function blog()
     {
-        $count      =   0;
-        $data       =   HomePage::where('type', 4)->get();
+        $count      =    HomePage::where('type', 4)->count();
+        $data       =   HomePage::where('type', 4)->orderBy('id','desc')->get();
         return view('admin/blog', get_defined_vars());
     }
     public function recentMedia()
     {
-        $count      =   0;
-        $data       =   HomePage::where('type', 5)->get();
+        $count      =    HomePage::where('type', 5)->count();
+        $data       =   HomePage::where('type', 5)->orderBy('id','desc')->get();
         return view('admin/recentMedia', get_defined_vars());
     }
     public function secMainBanner()
     {
-        $count      =   0;
-        $data       =   HomePage::where('type', 6)->get();
+        $count      =   HomePage::where('type', 6)->count();
+        $data       =   HomePage::where('type', 6)->orderBy('id','desc')->get();
         return view('admin/secMainBanner', get_defined_vars());
     }
 

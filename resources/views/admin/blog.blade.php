@@ -24,10 +24,9 @@
             <div class="col-12 data-tables-hide-filter">
                 <div class="card">
                     <div class="card-body">
-                        @if($count>1)
-                        @else
+                      
                         <button class="btn btn-outline-secondary btn-lg mb-1 " data-toggle="modal" data-backdrop="static" data-target="#exampleModalRight" style="float: right;" onclick="addNew(0,' ','','')" type="button"> Add New</button>
-                        @endif
+                      
                         <table class="data-table data-tables-pagination responsive nowrap" data-order="[[ 1, &quot;desc&quot; ]]">
                             <thead>
                                 <tr>
@@ -75,6 +74,8 @@
                                     <!-- <input type="hidden" id="descriptionData" value="{{$list->description}}"> -->
                                     <textarea style="display: none;" class="form-control" id="descriptionData_{{$list->id}}" name="description" >{{$list->description}}</textarea>
                                     <textarea style="display: none;" class="form-control" id="short_descriptionData_{{$list->id}}"  name="description" >{{$list->short_desc}}</textarea>
+                                    <input type="hidden" id="headerData_{{$list->id}}" class="form-control" value="{{$list->header}}"  >
+                                    <input type="hidden" id="textData_{{$list->id}}" class="form-control" value="{{$list->text}}"  >
                                     <input type="hidden" id="facebookData_{{$list->id}}" class="form-control" value="{{$list->fb_link}}"  >
                                     <input type="hidden" id="twitterData_{{$list->id}}" class="form-control" value="{{$list->twitter_link}}"  >
                                     <input type="hidden" id="youtubeData_{{$list->id}}" class="form-control"value="{{$list->youtube_link}}"  >
@@ -104,17 +105,17 @@
                         <div class="modal-body">
                             <form action="{{url('saveMainPageData')}}" method="POST" enctype="multipart/form-data" data-parsley-validate>
                                 @csrf
-                                <div class="form-group"><label>Title*</label> <input type="text" name="header" id="header" class="form-control" placeholder="" required></div>
+                                <div class="form-group"><label>Title*</label> <input type="text" name="header" id="header"  class="form-control" placeholder="" required></div>
                                 <span id="upload_images"> </span>
-                                <div class="form-group"><label>Name</label> <input type="text" name="name" id="name" class="form-control" placeholder="" ></div>
-                                <div class="form-group"><label> Position</label> <input type="text" name="position" id="position" class="form-control" placeholder="" ></div>
+                                <div class="form-group"><label>Name</label> <input type="text" name="name" id="name"  maxlength="200" class="form-control"  placeholder="" ></div>
+                                <div class="form-group"><label> Position</label> <input type="text" name="position" id="position" maxlength="200"  class="form-control" placeholder="" ></div>
 
-                                <div class="form-group"><label>Keywords*</label> <input type="text" name="keywords" id="keywords" class="form-control" placeholder="" required></div>
+                                <div class="form-group"><label>Keywords*</label> <input type="text" name="keywords" id="keywords"   class="form-control" placeholder="" required></div>
                                 <div class="form-group"><label>Short Desc*</label> <textarea  name="short_desc" id="short_desc" class="form-control" placeholder="" rows="8" cols="200" required></textarea></div>
                                 <div class="form-group"><label>Description*</label>   <textarea class="form-control"  id="description" placeholder="Enter the Description" name="description"></textarea></div>
-                                <div class="form-group"><label>Facebook Link</label> <input type="text" name="fb_link" id="fb_link" class="form-control" placeholder="" ></div>
-                                <div class="form-group"><label>Twitter Link</label> <input type="text" name="twitter_link" id="twitter_link" class="form-control" placeholder="" ></div>
-                                <div class="form-group"><label>Youtube Link</label> <input type="text" name="youtube_link" id="youtube_link" class="form-control" placeholder="" ></div>
+                                <div class="form-group"><label>Facebook Link</label> <input type="text" name="fb_link" id="fb_link" maxlength="200" class="form-control" placeholder="" ></div>
+                                <div class="form-group"><label>Twitter Link</label> <input type="text" name="twitter_link" id="twitter_link" maxlength="200" class="form-control" placeholder="" ></div>
+                                <div class="form-group"><label>Youtube Link</label> <input type="text" name="youtube_link" id="youtube_link" maxlength="200" class="form-control" placeholder="" ></div>
                                 <input type="hidden" name="home_page" id="home_page">
                                 <input type="hidden" name="type" id="type" value="4">
                                 <div class="modal-footer"> <button type="submit" class="btn btn-primary">Submit</button><button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button></div>

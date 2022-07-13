@@ -24,10 +24,9 @@
             <div class="col-12 data-tables-hide-filter">
                 <div class="card">
                     <div class="card-body">
-                        @if($count>1)
-                        @else
+                   
                         <button class="btn btn-outline-secondary btn-lg mb-1 " data-toggle="modal" data-backdrop="static" data-target="#exampleModalRight" style="float: right;" onclick="addNew(0,' ','','')" type="button"> Add New</button>
-                        @endif
+                    
                         <table class="data-table data-tables-pagination responsive nowrap" data-order="[[ 1, &quot;desc&quot; ]]">
                             <thead>
                                 <tr>
@@ -73,7 +72,8 @@
                                         </div>
 
                                     </td>
-
+                                    <input type="hidden" id="headerData_{{$list->id}}" class="form-control" value="{{$list->header}}"  >
+                                    <input type="hidden" id="textData_{{$list->id}}" class="form-control" value="{{$list->text}}"  >
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -101,7 +101,7 @@
                                 @csrf
                                 <div class="form-group"><label>Title</label> <input type="text" name="header" id="header" class="form-control" placeholder="" required></div>
                                 <span id="upload_images"> </span>
-                                <div class="form-group"><label>Link</label> <input type="text" name="link" id="link" class="form-control" placeholder="" required></div>
+                                <div class="form-group"><label>Link</label> <input type="text" name="link" id="link" maxlength="200" class="form-control" placeholder="" required></div>
                                 <spna id="platform_type">
                                 <div>
                                     <label>Video Platform</label>

@@ -335,9 +335,10 @@
 </script>
 <script>
     function addNew(id = '', header = '', text = '', image = '', link = '', isImage = '', name = '', position = '', data_type = '', keywords = '', description = '',short_desc='') {
-        
-        // alert(name);
-        if ($('#descriptionData_' + id).length) {
+        var type = jQuery('#type').val();
+        if(type == 4){
+  // alert(name);
+  if ($('#descriptionData_' + id).length) {
             var desc = jQuery('#descriptionData_' + id).val();
             var short_descdata = jQuery('#short_descriptionData_' + id).val();
             var fb_link = jQuery('#facebookData_' + id).val();
@@ -374,15 +375,20 @@
                 });
                jQuery('#description').val('');
         }
+        }
+      
         
         var html = '';
 
         if (id > 0) {
             var img = "{{URL::asset('images/')}}/" + image + "";
             var title = 'Edit Home Page Banner';
-            jQuery('#header').val(header);
+            var headerData_ = jQuery('#headerData_'+id).val();
+            var textData_ = jQuery('#textData_'+id).val();
+            jQuery('#header').val(headerData_);
+            jQuery('#text').val(textData_);
             jQuery('#home_page').val(id);
-            jQuery('#text').val(text);
+            
             // jQuery('#data_type').val(data_type);
             // jQuery('#image').val(image);
             jQuery('#link').val(link);

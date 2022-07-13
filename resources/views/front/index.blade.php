@@ -132,7 +132,7 @@
                 <a class="white_color" href="{{url('showPost')}}/{{$list->id}}/{{urlencode($list->header)}}">
                 <div>
                     <div class="blog">
-                        <img src="{{asset('images')}}/{{$list->image}}" />
+                        <img style="width: 100%; height:300px" src="{{asset('images')}}/{{$list->image}}" />
 
                         <p>{{$list->header}}</p>
                     </div>

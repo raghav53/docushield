@@ -24,10 +24,9 @@
             <div class="col-12 data-tables-hide-filter">
                 <div class="card">
                     <div class="card-body">
-                        @if($count>1)
-                        @else
+                     
                         <button class="btn btn-outline-secondary btn-lg mb-1 " data-toggle="modal" data-backdrop="static" data-target="#exampleModalRight" style="float: right;" onclick="addNew(0,' ','','',1)" type="button"> Add New</button>
-                        @endif
+                       
                         <table class="data-table data-tables-pagination responsive nowrap" data-order="[[ 1, &quot;desc&quot; ]]">
                             <thead>
                                 <tr>
@@ -48,13 +47,13 @@
                                         <p class="text-muted">{{$i++}}</p>
                                     </td> -->
                                     <td>
-                                        <p class="list-item-heading">{{subtr($list->header,0,10)}}..</p>
+                                        <p class="list-item-heading">{{substr($list->header,0,10)}}..</p>
                                     </td>
                                     <td>
-                                        <p class="list-item-heading">{{subtr($list->text,0,10)}}..</p>
+                                        <p class="list-item-heading">{{substr($list->text,0,10)}}..</p>
                                     </td>
                                     <td>
-                                        <p class="list-item-heading">{{subtr($list->name,0,10)}}..</p>
+                                        <p class="list-item-heading">{{substr($list->name,0,10)}}..</p>
                                     </td>
                                 
                               
@@ -74,7 +73,8 @@
                                         </div>
 
                                     </td>
-
+                                    <input type="hidden" id="headerData_{{$list->id}}" class="form-control" value="{{$list->header}}"  >
+                                    <input type="hidden" id="textData_{{$list->id}}" class="form-control" value="{{$list->text}}"  >
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -102,8 +102,8 @@
                                 @csrf
                                 <div class="form-group"><label>Title</label> <input type="text" name="header" id="header" class="form-control" placeholder="" required></div>
                                 <div class="form-group"><label>Text</label> <input type="text" name="text" id="text" class="form-control" placeholder="" required></div>
-                                <div class="form-group"><label>Name</label> <input type="text" name="name" id="name" class="form-control" placeholder="" required></div>
-                                <div class="form-group"><label>Position</label> <input type="text" name="position" id="position" class="form-control" placeholder="" required></div>
+                                <div class="form-group"><label>Name</label> <input type="text" name="name" id="name" maxlength="200" class="form-control" placeholder="" required></div>
+                                <div class="form-group"><label>Position</label> <input type="text" name="position" maxlength="200" id="position" class="form-control" placeholder="" required></div>
 
                                 <input type="hidden" name="home_page" id="home_page">
                                 <input type="hidden" name="type" id="type" value="3">
