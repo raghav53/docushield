@@ -58,6 +58,7 @@
             border-radius: 50% 50% 50% 50%;
             width: 100px;
             height: 100px;
+            margin: 20px;
             /* margin: -28px; */
         }
 
@@ -138,7 +139,13 @@
                     </div> -->
                     <!-- </div><button class="header-icon btn btn-empty d-none d-sm-inline-block" type="button" id="fullScreenButton"><i class="simple-icon-size-fullscreen"></i> <i class="simple-icon-size-actual"></i></button>
             </div> -->
-                    <div class="user d-inline-block"><button class="btn btn-empty p-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="name">{{Auth::User()->name}}</span> <span><img alt="Profile Picture" src="{{asset('images')}}/{{Auth::User()->image}}"></span></button>
+                    <div class="user d-inline-block"><button class="btn btn-empty p-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="name">{{Auth::User()->name}}</span>
+                   @if(Auth::User()->image!='')  
+                   <span><img alt="Profile Picture" src="{{asset('images')}}/{{Auth::User()->image}}"></span>
+                   @else
+                   <span><img alt="Profile Picture" src="{{asset('admin/img/user.jpg')}}"></span>
+                   @endif
+                    </button>
                         <div class="dropdown-menu dropdown-menu-right mt-3">
                             <a class="dropdown-item" href="{{url('adminAccount')}}">Account</a>
                             <a class="dropdown-item" href="{{url('adminlogout')}}">Sign out</a>

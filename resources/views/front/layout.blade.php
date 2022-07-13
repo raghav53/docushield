@@ -27,9 +27,27 @@
         }
         .viewmore{
             float: right;
-    margin-top: 20px;
-    width: 131px;
-    height: 50px;
+         margin-top: 20px;
+         width: 131px;
+         height: 50px;
+        }
+        .me-2:hover{
+            color: #e1433f;
+        }
+        .navbar-dark .navbar-nav .nav-link:hover {
+            color: #e1433f!important;
+         text-transform: uppercase;
+         font-family: "Liberator";
+         font-style: normal;
+         font-weight: 420;
+         font-size: 15px;
+         line-height: 16px;
+  /* identical to box height, or 107% */
+         letter-spacing: 1px;
+         color: #ffffff;
+         padding: 12px 49px 0px 8px;
+        }.align-items-center a{
+           color: white;
         }
     </style>
 </head>
@@ -49,7 +67,7 @@
                     <ul class="navbar-nav ms-md-auto gap-2">
                         <li class="nav-item rounded">
                             <a class="nav-link {{ request()->is('/') ? 'active' : ''}}" aria-current="page" href="#"><i
-                                    class="bi bi-house-fill me-2"></i>Product</a>
+                                    class="bi bi-house-fill me-2"></i>Home</a>
                         </li>
                         <li class="nav-item rounded">
                             <a class="nav-link" href="#"><i class="bi bi-people-fill me-2"></i>Company</a>

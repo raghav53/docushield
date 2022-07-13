@@ -3,6 +3,12 @@
 @section('title','Docushiled')
 @extends('front/layout')
 @section('content')
+<style>
+    .heading .watch-video:hover {
+  color: #e1433f;
+}
+    
+</style>
   <!--Slider Section -->
   <section class="slder">
         <div class="container">

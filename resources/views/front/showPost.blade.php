@@ -9,9 +9,9 @@
 <section class="breadcumb">
     <div class="container">
         <div class="d-flex align-items-center">
-            <h3>home</h3>
+            <a href="{{url('/')}}"><h3>home</h3></a>
             <span>/</span>
-            <h3> blog</h3>
+            <a href="{{url('viewAllPost')}}"> <h3> blog</h3></a>
             <span>/</span>
             <h3>{{$blog->header}}</h3>
         </div>
@@ -46,6 +46,7 @@
                 </div>
                 <div class="bottom-blog">
                     <div class="row">
+                        @if(isset($blogs[0]->id))
                         <div class="col-md-6">
                             <div class="left-blog">
                                 <a href="{{url('showPost')}}/{{$blogs[0]->id}}/{{urlencode($blogs[0]->header)}}">previous post
@@ -61,6 +62,8 @@
                                 </a>
                             </div>
                         </div>
+                        @endif
+                        @if(isset($blogs[1]->id))
                         <div class="col-md-6">
                             <div class="right-blog">
                                 <a href="{{url('showPost')}}/{{$blogs[1]->id}}/{{urlencode($blogs[1]->header)}}"> next post
@@ -75,6 +78,7 @@
                                 </a>
                             </div>
                         </div>
+                        @endif
                     </div>
                 </div>
             </div>
