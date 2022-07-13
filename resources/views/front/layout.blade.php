@@ -97,7 +97,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="footer-ul">
+                            <!-- <div class="footer-ul">
                                 <ul>
                                     <li>
                                         <a href="">Runs of Flux</a>
@@ -107,7 +107,7 @@
                                     </li>
 
                                 </ul>
-                            </div>
+                            </div> -->
                         </div>
                         <!-- <div class="col-md-6 text-right link">
                             <div class="socail-ul">

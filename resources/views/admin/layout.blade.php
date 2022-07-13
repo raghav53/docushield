@@ -72,6 +72,8 @@
             border-radius: 50%;
             width: 90px;
             height: 90px;
+        }.theme-button{
+            display: none;
         }
     </style>
 </head>
@@ -107,7 +109,7 @@
                             <span>Feedback</span> </a><a href="javascript:void(0)" class="icon-menu-item"><i class="iconsminds-file d-block"></i> <span>Session</span> </a>
                     </div>
                 </div> -->
-                <div class="position-relative d-inline-block"><button class="header-icon btn btn-empty" type="button" id="notificationButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="simple-icon-bell"></i> <span class="count">3</span></button>
+                <!-- <div class="position-relative d-inline-block"><button class="header-icon btn btn-empty" type="button" id="notificationButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="simple-icon-bell"></i> <span class="count">3</span></button> -->
                     <!-- <div class="dropdown-menu dropdown-menu-right mt-3 position-absolute" id="notificationDropdown">
                         <div class="scroll">
                             <div class="d-flex flex-row mb-3 pb-3 border-bottom"><a href="#"><img src="img/profile-pic-l-2.jpg" alt="Notification Image" class="img-thumbnail list-thumbnail xsmall border-0 rounded-circle"></a>
@@ -251,7 +253,7 @@
     </div>
     @yield('content')
 
-    <footer class="page-footer">
+    <!-- <footer class="page-footer">
         <div class="footer-content">
             <div class="container-fluid">
                 <div class="row">
@@ -268,7 +270,7 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> -->
     <script src="{{asset('admin/js/vendor/jquery-3.3.1.min.js')}}"></script>
     <script src="{{asset('admin/js/vendor/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('admin/js/vendor/Chart.bundle.min.js')}}"></script>
